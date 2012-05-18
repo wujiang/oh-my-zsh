@@ -1,7 +1,13 @@
 function hg_prompt_info() {
   branch=$(hg id -b 2> /dev/null) || return
-  tag=$(hg id -t 2> /dev/null) || return
-  rev_number=$(hg id -n 2> /dev/null) || return
-  rev_id=$(hg id -i 2> /dev/null) || return
-  echo "${ZSH_THEME_HG_PROMPT_PREFIX}${rev_number/\+/}:${rev_id/\+/}@${branch}(${tag})${ZSH_THEME_HG_PROMPT_SUFFIX}"
+  echo "${ZSH_THEME_HG_PROMPT_PREFIX}${branch}$(parse_hg_dirty)${ZSH_THEME_HG_PROMPT_SUFFIX}"
+}
+
+# Checks if working tree is dirty
+parse_hg_dirty() {
+  if [[ -n $(hg status 2> /dev/null) ]]; then
+    echo "$ZSH_THEME_HG_PROMPT_DIRTY"
+  else
+    echo "$ZSH_THEME_HG_PROMPT_CLEAN"
+  fi
 }
