@@ -9,7 +9,7 @@ alias -- -='cd -'
 # Super user
 alias _='sudo'
 
-#alias g='grep -in'
+# alias g='grep -irn'
 
 # Show history
 alias history='fc -l 1'
