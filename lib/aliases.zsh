@@ -9,7 +9,7 @@ alias -- -='cd -'
 # Super user
 alias _='sudo'
 
-# alias g='grep -irn'
+#alias g='grep -in'
 
 # Show history
 alias history='fc -l 1'
@@ -21,4 +21,8 @@ alias ll='ls -l'
 alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
+
+alias E="SUDO_EDITOR=\"emacsclient -nw -n -c -a emacs\" sudoedit"
+alias edmn="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs --daemon"
+alias e="emacsclient -t -c -a emacs $@"
 
