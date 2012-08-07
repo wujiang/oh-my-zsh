@@ -15,3 +15,10 @@ function take() {
   cd $1
 }
 
+function wiki() {
+  if [ -z "$1" ]; then
+    echo "Usage: wiki [search term]"
+  else
+    dig +short txt ${1}.wp.dg.cx
+  fi
+}
