@@ -24,9 +24,9 @@ alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
 
-alias EED="SUDO_EDITOR=\"emacsclient -nw -n -c -a emacs\" sudoedit"
-alias edmn="/usr/local/Cellar/emacs/24.1/Emacs.app/Contents/MacOS/Emacs --daemon"
-alias eed="emacsclient -t -c -a emacs $@"
+alias EED="SUDO_EDITOR=\"emacsclient -nw -n -c -a emacs-snapshot\" sudoedit"
+alias edmn="emacs-snapshot --daemon"
+alias eed="emacsclient -t -c -a emacs-snapshot $@"
 
 # Nosetests
 alias nose="nosetests -x --nologcapture"
